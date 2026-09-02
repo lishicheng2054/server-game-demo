@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>游戏大厅</title>
+  <link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <p class="eyebrow">Server Mini Games</p>
+      <h1>游戏大厅</h1>
+      <p class="site-intro">一个部署在云服务器上的静态小游戏集合，用来练习 Linux、Nginx、网页结构、Canvas 和前端状态管理。</p>
+      <div class="hero-actions" aria-label="快捷入口">
+        <span class="status-chip"><span aria-hidden="true"></span>7 款游戏 · 全服排行榜已接入</span>
+        <a class="ghost-link" href="leaderboard/">排行榜</a>
+        <a class="ghost-link" href="#game-list">浏览全部</a>
+      </div>
+    </header>
+
+    <section class="lobby-showcase" aria-label="游戏大厅精选">
+      <div class="featured-game" aria-labelledby="featured-title">
+        <div class="game-spotlight" aria-hidden="true">
+          <span>2048</span>
+          <span>16</span>
+          <span>8</span>
+          <span>4</span>
+        </div>
+        <div>
+          <p class="eyebrow">推荐先玩</p>
+          <h2 id="featured-title">2048</h2>
+          <p>规则清晰、反馈直接，适合观察“规则逻辑”和“页面渲染”如何分开。玩完后再看代码，会更容易理解状态是怎么一步步变化的。</p>
+        </div>
+        <a class="play-link" href="games/2048/">开始挑战</a>
+      </div>
+    </section>
+
+    <nav class="filter-bar" aria-label="游戏分类筛选">
+      <button class="filter-button is-active" type="button" data-filter="all">全部</button>
+      <button class="filter-button" type="button" data-filter="classic">经典</button>
+      <button class="filter-button" type="button" data-filter="puzzle">益智</button>
+      <button class="filter-button" type="button" data-filter="action">动作</button>
+      <button class="filter-button" type="button" data-filter="strategy">策略</button>
+      <button class="filter-button" type="button" data-filter="memory">记忆</button>
+    </nav>
+
+    <section id="game-list" class="game-grid" aria-label="游戏列表">
+      <article class="game-card is-available" data-category="classic">
+        <div class="card-art snake-art" aria-hidden="true">
+          <span>🐍</span>
+        </div>
+        <div>
+          <p class="game-type">经典 / Canvas</p>
+          <h2>贪吃蛇</h2>
+          <p>控制蛇吃食物、变长、加速，挑战最高分。支持键盘、WASD、触屏和手机方向按钮。</p>
+          <div class="game-meta">
+            <span>难度 中</span>
+            <span>手机友好</span>
+          </div>
+        </div>
+        <a class="play-link" href="games/snake/">开始游戏</a>
+      </article>
+
+      <article class="game-card is-available" data-category="puzzle">
+        <div class="card-art puzzle-art" aria-hidden="true">
+          <span>🔢</span>
+        </div>
+        <div>
+          <p class="game-type">益智 / 数字</p>
+          <h2>2048</h2>
+          <p>滑动合并数字方块，冲到 2048。支持键盘、WASD、触屏滑动和手机方向按钮。</p>
+          <div class="game-meta">
+            <span>难度 中</span>
+            <span>手机友好</span>
+          </div>
+        </div>
+        <a class="play-link" href="games/2048/">开始游戏</a>
+      </article>
+
+      <article class="game-card is-available" data-category="action">
+        <div class="card-art action-art" aria-hidden="true">
+          <span>🧱</span>
+        </div>
+        <div>
+          <p class="game-type">动作 / 物理</p>
+          <h2>打砖块</h2>
+          <p>控制挡板反弹小球，击碎所有砖块。支持键盘、鼠标、触屏拖动和暂停。</p>
+          <div class="game-meta">
+            <span>难度 中</span>
+            <span>反应训练</span>
+          </div>
+        </div>
+        <a class="play-link" href="games/breakout/">开始游戏</a>
+      </article>
+
+      <article class="game-card is-available" data-category="strategy">
+        <div class="card-art strategy-art" aria-hidden="true">
+          <span>⭕</span>
+        </div>
+        <div>
+          <p class="game-type">策略 / 回合</p>
+          <h2>井字棋</h2>
+          <p>两人轮流落子，先连成一条线的一方获胜。适合学习二维棋盘、胜负线和回合切换。</p>
+          <div class="game-meta">
+            <span>难度 低</span>
+            <span>双人同屏</span>
+          </div>
+        </div>
+        <a class="play-link" href="games/tic-tac-toe/">开始游戏</a>
+      </article>
+
+      <article class="game-card is-available" data-category="memory">
+        <div class="card-art memory-art" aria-hidden="true">
+          <span>🃏</span>
+        </div>
+        <div>
+          <p class="game-type">记忆 / 配对</p>
+          <h2>记忆翻牌</h2>
+          <p>每次翻两张牌，记住位置并找出所有配对。适合学习数组洗牌、选择锁定和胜利判断。</p>
+          <div class="game-meta">
+            <span>难度 低</span>
+            <span>记忆训练</span>
+          </div>
+        </div>
+        <a class="play-link" href="games/memory/">开始游戏</a>
+      </article>
+
+      <article class="game-card is-available" data-category="puzzle">
+        <div class="card-art mine-art" aria-hidden="true">
+          <span>💣</span>
+        </div>
+        <div>
+          <p class="game-type">益智 / 推理</p>
+          <h2>扫雷</h2>
+          <p>根据数字判断雷的位置，翻开所有安全格。支持右键插旗，手机上可以长按插旗。</p>
+          <div class="game-meta">
+            <span>难度 高</span>
+            <span>推理训练</span>
+          </div>
+        </div>
+        <a class="play-link" href="games/minesweeper/">开始游戏</a>
+      </article>
+
+      <article class="game-card is-available" data-category="classic">
+        <div class="card-art tetris-art" aria-hidden="true">
+          <span>🧩</span>
+        </div>
+        <div>
+          <p class="game-type">经典 / 消除</p>
+          <h2>俄罗斯方块</h2>
+          <p>移动和旋转下落方块，拼满横行后消除得分。支持键盘、WASD、暂停和手机按钮。</p>
+          <div class="game-meta">
+            <span>难度 高</span>
+            <span>节奏训练</span>
+          </div>
+        </div>
+        <a class="play-link" href="games/tetris/">开始游戏</a>
+      </article>
+    </section>
+
+    <section class="platform-notes" aria-labelledby="upcoming-title">
+      <div>
+        <p class="eyebrow">学习路线</p>
+        <h2 id="upcoming-title">从能访问，到能扩展</h2>
+      </div>
+      <div class="note-list">
+        <span>静态网页</span>
+        <span>Nginx 发布</span>
+        <span>排行榜 API</span>
+      </div>
+    </section>
+
+    <section class="upcoming-section" aria-label="下一批游戏">
+      <div>
+        <p class="eyebrow">下一批游戏</p>
+        <h2>继续扩展方向</h2>
+      </div>
+      <div class="upcoming-list">
+        <a class="ghost-link" href="leaderboard/">查看排行榜</a>
+        <span>五子棋</span>
+        <span>飞行躲避</span>
+      </div>
+    </section>
+  </main>
+  <script src="lobby.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>服务器俄罗斯方块</title>
+  <link rel="stylesheet" href="../../styles/site.css">
+</head>
+<body>
+  <main class="app">
+    <section class="game-panel" aria-labelledby="game-title">
+      <a class="back-link" href="../../">← 返回小游戏集合</a>
+      <div class="title-row">
+        <div>
+          <p class="eyebrow">Server Tetris Demo</p>
+          <h1 id="game-title">服务器俄罗斯方块</h1>
+        </div>
+        <div class="best-score">
+          <span>最高分</span>
+          <strong id="best-score">0</strong>
+        </div>
+      </div>
+
+      <div class="stats" aria-label="游戏数据">
+        <div>
+          <span>分数</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span>消除行</span>
+          <strong id="lines">0</strong>
+        </div>
+        <div>
+          <span>状态</span>
+          <strong id="status">待开始</strong>
+        </div>
+      </div>
+
+      <div class="game-page-layout">
+        <div class="play-surface">
+          <div id="tetris-board" class="tetris-board" role="grid" aria-label="俄罗斯方块棋盘"></div>
+          <p id="message" class="message"></p>
+        </div>
+
+        <aside class="game-help" aria-label="游戏说明">
+          <h2>操作</h2>
+          <div class="help-grid">
+            <span>左 / 右</span>
+            <strong>移动</strong>
+            <span>上 / W</span>
+            <strong>旋转</strong>
+            <span>下 / S</span>
+            <strong>加速</strong>
+            <span>空格</span>
+            <strong>落底</strong>
+          </div>
+          <p>拼满横行后会消除，每行 100 分。方块到达顶部时游戏结束。</p>
+
+          <div class="leaderboard-panel" aria-labelledby="leaderboard-title">
+            <div class="leaderboard-heading">
+              <h2 id="leaderboard-title">全服排行榜</h2>
+              <span id="leaderboard-status">加载中</span>
+            </div>
+            <ol id="leaderboard-list" class="leaderboard-list"></ol>
+            <form id="leaderboard-form" class="leaderboard-form">
+              <label for="player-name">昵称</label>
+              <div class="score-submit-row">
+                <input id="player-name" name="playerName" maxlength="16" autocomplete="nickname" placeholder="输入昵称">
+                <button class="primary-button" type="submit">提交分数</button>
+              </div>
+            </form>
+          </div>
+        </aside>
+      </div>
+
+      <div class="game-command-bar">
+        <div class="actions">
+          <button id="start" class="primary-button" type="button">开始</button>
+          <button id="pause" class="secondary-button" type="button">暂停</button>
+          <button id="reset" class="secondary-button" type="button">重置</button>
+        </div>
+
+        <div class="tetris-controls" aria-label="手机控制">
+          <button class="direction-button" type="button" data-action="left" aria-label="左移">←</button>
+          <button class="direction-button" type="button" data-action="rotate" aria-label="旋转">↻</button>
+          <button class="direction-button" type="button" data-action="right" aria-label="右移">→</button>
+          <button class="direction-button" type="button" data-action="down" aria-label="下落一格">↓</button>
+          <button class="direction-button wide-control" type="button" data-action="drop" aria-label="直接落底">落底</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="game-state.js"></script>
+  <script src="../../scripts/leaderboard-widget.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

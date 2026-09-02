@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>服务器记忆翻牌</title>
+  <link rel="stylesheet" href="../../styles/site.css">
+</head>
+<body>
+  <main class="app">
+    <section class="game-panel" aria-labelledby="game-title">
+      <a class="back-link" href="../../">← 返回小游戏集合</a>
+      <div class="title-row">
+        <div>
+          <p class="eyebrow">Server Memory Demo</p>
+          <h1 id="game-title">服务器记忆翻牌</h1>
+        </div>
+        <div class="best-score">
+          <span>最佳步数</span>
+          <strong id="best-moves">-</strong>
+        </div>
+      </div>
+
+      <div class="stats" aria-label="游戏数据">
+        <div>
+          <span>步数</span>
+          <strong id="moves">0</strong>
+        </div>
+        <div>
+          <span>配对</span>
+          <strong id="pairs">0/8</strong>
+        </div>
+        <div>
+          <span>状态</span>
+          <strong id="status">进行中</strong>
+        </div>
+      </div>
+
+      <div id="memory-board" class="memory-board" role="grid" aria-label="记忆翻牌棋盘"></div>
+
+      <p id="message" class="message"></p>
+
+      <div class="actions single-action">
+        <button id="reset" class="primary-button" type="button">重新洗牌</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="game-state.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

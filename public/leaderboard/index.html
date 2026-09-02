@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>排行榜总览</title>
+  <link rel="stylesheet" href="../styles/site.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header lobby-header">
+      <div>
+        <p class="eyebrow">Server Mini Games</p>
+        <h1>排行榜总览</h1>
+        <p class="site-intro">这里集中展示已经接入全服排行榜的游戏。分数由服务器 API 读取，刷新页面也不会丢。</p>
+        <div class="hero-actions" aria-label="快捷入口">
+          <a class="play-link" href="../">返回大厅</a>
+          <a class="ghost-link" href="../games/tetris/">挑战俄罗斯方块</a>
+        </div>
+      </div>
+      <div class="lobby-stats" aria-label="排行榜数据">
+        <div>
+          <strong>4</strong>
+          <span>已接入</span>
+        </div>
+        <div>
+          <strong>10</strong>
+          <span>每榜最多</span>
+        </div>
+        <div>
+          <strong>API</strong>
+          <span>实时读取</span>
+        </div>
+      </div>
+    </header>
+
+    <section id="leaderboard-overview" class="leaderboard-overview" aria-label="排行榜列表"></section>
+  </main>
+
+  <script src="leaderboard.js"></script>
+</body>
+</html>

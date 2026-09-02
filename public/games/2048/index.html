@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>服务器 2048</title>
+  <link rel="stylesheet" href="../../styles/site.css">
+</head>
+<body>
+  <main class="app">
+    <section class="game-panel" aria-labelledby="game-title">
+      <a class="back-link" href="../../">← 返回小游戏集合</a>
+      <div class="title-row">
+        <div>
+          <p class="eyebrow">Server 2048 Demo</p>
+          <h1 id="game-title">服务器 2048</h1>
+        </div>
+        <div class="best-score">
+          <span>最高分</span>
+          <strong id="best-score">0</strong>
+        </div>
+      </div>
+
+      <div class="stats" aria-label="游戏数据">
+        <div>
+          <span>分数</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span>目标</span>
+          <strong>2048</strong>
+        </div>
+        <div>
+          <span>状态</span>
+          <strong id="status">待开始</strong>
+        </div>
+      </div>
+
+      <div class="game-page-layout">
+        <div class="play-surface">
+          <div id="puzzle-board" class="puzzle-board" role="grid" aria-label="2048 棋盘"></div>
+          <p id="message" class="message"></p>
+        </div>
+
+        <aside class="game-help" aria-label="游戏说明">
+          <h2>操作</h2>
+          <div class="help-grid">
+            <span>方向键 / WASD</span>
+            <strong>滑动</strong>
+            <span>相同数字</span>
+            <strong>合并</strong>
+          </div>
+          <p>合成 2048 即胜利。棋盘填满且无法移动时游戏结束。</p>
+
+          <div class="leaderboard-panel" aria-labelledby="leaderboard-title">
+            <div class="leaderboard-heading">
+              <h2 id="leaderboard-title">全服排行榜</h2>
+              <span id="leaderboard-status">加载中</span>
+            </div>
+            <ol id="leaderboard-list" class="leaderboard-list"></ol>
+            <form id="leaderboard-form" class="leaderboard-form">
+              <label for="player-name">昵称</label>
+              <div class="score-submit-row">
+                <input id="player-name" name="playerName" maxlength="16" autocomplete="nickname" placeholder="输入昵称">
+                <button class="primary-button" type="submit">提交分数</button>
+              </div>
+            </form>
+          </div>
+        </aside>
+      </div>
+
+      <div class="actions single-action">
+        <button id="start" class="primary-button" type="button">开始新局</button>
+      </div>
+
+      <div class="direction-pad puzzle-pad" aria-label="手机方向控制">
+        <button class="direction-button up" type="button" data-direction="up" aria-label="向上">↑</button>
+        <button class="direction-button left" type="button" data-direction="left" aria-label="向左">←</button>
+        <button class="direction-button right" type="button" data-direction="right" aria-label="向右">→</button>
+        <button class="direction-button down" type="button" data-direction="down" aria-label="向下">↓</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="game-state.js"></script>
+  <script src="../../scripts/leaderboard-widget.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

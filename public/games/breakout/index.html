@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>服务器打砖块</title>
+  <link rel="stylesheet" href="../../styles/site.css">
+</head>
+<body>
+  <main class="app">
+    <section class="game-panel" aria-labelledby="game-title">
+      <a class="back-link" href="../../">← 返回小游戏集合</a>
+      <div class="title-row">
+        <div>
+          <p class="eyebrow">Server Breakout Demo</p>
+          <h1 id="game-title">服务器打砖块</h1>
+        </div>
+        <div class="best-score">
+          <span>最高分</span>
+          <strong id="best-score">0</strong>
+        </div>
+      </div>
+
+      <div class="stats" aria-label="游戏数据">
+        <div>
+          <span>分数</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span>生命</span>
+          <strong id="lives">3</strong>
+        </div>
+        <div>
+          <span>砖块</span>
+          <strong id="bricks-left">32</strong>
+        </div>
+      </div>
+
+      <div class="game-page-layout">
+        <div class="play-surface">
+          <canvas id="breakout-canvas" class="breakout-board" aria-label="打砖块游戏区域"></canvas>
+          <p id="message" class="message"></p>
+        </div>
+
+        <aside class="game-help" aria-label="游戏说明">
+          <h2>操作</h2>
+          <div class="help-grid">
+            <span>方向键 / A D</span>
+            <strong>挡板</strong>
+            <span>空格</span>
+            <strong>暂停</strong>
+          </div>
+          <p>击碎砖块会加分，清空全部砖块胜利，生命用完游戏结束。</p>
+
+          <div class="leaderboard-panel" aria-labelledby="leaderboard-title">
+            <div class="leaderboard-heading">
+              <h2 id="leaderboard-title">全服排行榜</h2>
+              <span id="leaderboard-status">加载中</span>
+            </div>
+            <ol id="leaderboard-list" class="leaderboard-list"></ol>
+            <form id="leaderboard-form" class="leaderboard-form">
+              <label for="player-name">昵称</label>
+              <div class="score-submit-row">
+                <input id="player-name" name="playerName" maxlength="16" autocomplete="nickname" placeholder="输入昵称">
+                <button class="primary-button" type="submit">提交分数</button>
+              </div>
+            </form>
+          </div>
+        </aside>
+      </div>
+
+      <div class="actions">
+        <button id="start" class="primary-button" type="button">开始</button>
+        <button id="pause" class="secondary-button" type="button">暂停</button>
+        <button id="reset" class="secondary-button" type="button">重置</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="game-state.js"></script>
+  <script src="../../scripts/leaderboard-widget.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

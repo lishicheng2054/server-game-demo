@@ -1,0 +1,10 @@
+{
+  "name": "server-game-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A static browser game for learning Linux server and Nginx deployment.",
+  "scripts": {
+    "test": "node tests/game-state.test.js && node tests/2048-state.test.js && node tests/breakout-state.test.js && node tests/tic-tac-toe-state.test.js && node tests/memory-state.test.js && node tests/minesweeper-state.test.js && node tests/tetris-state.test.js && node tests/leaderboard-service.test.js && node tests/leaderboard-api.test.js && node tests/site-structure.test.js && node tests/deploy-script.test.js",
+    "start:api": "node backend/server.js"
+  }
+}
